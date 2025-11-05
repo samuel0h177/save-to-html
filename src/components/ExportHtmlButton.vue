@@ -48,6 +48,7 @@ function save() {
   const contentHtml = computeSanitizedOuterHtml()
   if (!contentHtml) return
 
+  const tsDisplay = new Date().toLocaleString()
   const html = `<!DOCTYPE html>
 <html>
   <head>
@@ -72,12 +73,14 @@ function save() {
       /* Hide sort arrow icons in header */
       .v-table thead th .v-icon { display: none !important; }
       .v-container { max-width:100%; padding:0; }
+      .export-footer { margin-top:12px; color:#6b6b6b; font-size:12px; text-align:right; }
       ${props.extraCss}
     </style>
   </head>
   <body>
     <div class="export-shell v-application v-theme--light">
       ${contentHtml}
+      <div class="export-footer">Exported: ${tsDisplay}</div>
     </div>
   </body>
 </html>`

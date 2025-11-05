@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:hybrid": "vite build --config vite.config.js --outDir dist/hybrid --emptyOutDir false"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
