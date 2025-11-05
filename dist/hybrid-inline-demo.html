@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hybrid Inline Demo - Export HTML</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; }
+      .demo-shell { max-width: 1100px; margin: 0 auto; }
+      .toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+      .v-card { border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden; }
+      .v-table table { width: 100%; border-collapse: collapse; }
+      .v-table thead th { text-align: left; background: #f7f7f8; font-weight: 600; border-bottom: 1px solid #e0e0e0; padding: 12px 16px; }
+      .v-table tbody td { padding: 12px 16px; border-bottom: 1px solid #e0e0e0; }
+      .v-table tbody tr:hover { background: #fafafa; }
+    </style>
+  </head>
+  <body>
+    <div class="demo-shell">
+      <div class="toolbar">
+        <h2 style="margin:0">Golf Tournament Leaderboard (Hybrid Inline Demo)</h2>
+        <div id="export-btn"></div>
+      </div>
+
+      <div id="example-table-wrap">
+        <div class="v-card">
+          <div class="v-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th>Country</th>
+                  <th style="text-align:right">R1</th>
+                  <th style="text-align:right">R2</th>
+                  <th style="text-align:right">R3</th>
+                  <th style="text-align:right">R4</th>
+                  <th style="text-align:right">Total</th>
+                  <th style="text-align:right">To Par</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Scottie Scheffler</td><td>USA</td><td style="text-align:right">68</td><td style="text-align:right">65</td><td style="text-align:right">70</td><td style="text-align:right">67</td><td style="text-align:right">270</td><td style="text-align:right">-18</td></tr>
+                <tr><td>Rory McIlroy</td><td>NIR</td><td style="text-align:right">67</td><td style="text-align:right">68</td><td style="text-align:right">69</td><td style="text-align:right">68</td><td style="text-align:right">272</td><td style="text-align:right">-16</td></tr>
+                <tr><td>Jon Rahm</td><td>ESP</td><td style="text-align:right">70</td><td style="text-align:right">66</td><td style="text-align:right">68</td><td style="text-align:right">69</td><td style="text-align:right">273</td><td style="text-align:right">-15</td></tr>
+                <tr><td>Collin Morikawa</td><td>USA</td><td style="text-align:right">69</td><td style="text-align:right">67</td><td style="text-align:right">71</td><td style="text-align:right">67</td><td style="text-align:right">274</td><td style="text-align:right">-14</td></tr>
+                <tr><td>Viktor Hovland</td><td>NOR</td><td style="text-align:right">68</td><td style="text-align:right">70</td><td style="text-align:right">68</td><td style="text-align:right">69</td><td style="text-align:right">275</td><td style="text-align:right">-13</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inline build (no CSS needed) -->
+    <script src="/dist/hybrid/export-html-inline.iife.js"></script>
+    <script>
+      // Mount the minimal button and point it at the demo table wrapper
+      ExportHtmlInline.mountExportHtmlButtonInline({
+        mount: '#export-btn',
+        target: '#example-table-wrap',
+        filename: 'leaderboard',
+        title: 'Golf Leaderboard',
+        label: 'Save as HTML (Inline)'
+      })
+    </script>
+  </body>
+  
+</html>
+
+
